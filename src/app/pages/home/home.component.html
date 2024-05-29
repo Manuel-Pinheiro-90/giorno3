@@ -1,10 +1,11 @@
-<p>hello</p>
 <div class="container">
-  <div class="row">
+  <div class="row row-cols-4">
     <div class="col" *ngFor="let p of productArr">
       <div class="card">
+        <img src="{{ p.images[0] }}" alt="" />
         <div class="card-body">
           <h5 class="card-title">{{ p.title }}</h5>
+
           <p class="card-text">{{ p.id }}</p>
           <p class="card-text">{{ p.description }}</p>
           <p class="card-text">{{ p.category }}</p>

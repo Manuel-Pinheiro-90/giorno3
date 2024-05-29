@@ -20,6 +20,10 @@ getAll():Observable<Ijeson>{
 }
 
 
+getById(id:number):Observable<Iproduct>{
+  return this.http.get<Iproduct>(this.apiUrl + '/' + id);
+}
+
 
 
 
