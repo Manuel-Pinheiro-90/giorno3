@@ -1,0 +1,23 @@
+<p>hello</p>
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let p of productArr">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.title }}</h5>
+          <p class="card-text">{{ p.id }}</p>
+          <p class="card-text">{{ p.description }}</p>
+          <p class="card-text">{{ p.category }}</p>
+          <p class="card-text">{{ p.price }}</p>
+          <p class="card-text">{{ p.discountPercentage }}</p>
+          <p class="card-text">{{ p.rating }}</p>
+          <p class="card-text">{{ p.stock }}</p>
+          <p class="card-text">{{ p.tags }}</p>
+          <p class="card-text">{{ p.brand }}</p>
+          <button class="btn btn-success">preferiti</button>
+          <button class="btn btn-warning">carrello</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
