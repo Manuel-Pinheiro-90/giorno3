@@ -2,7 +2,7 @@
   <div class="row row-cols-4">
     <div class="col" *ngFor="let p of productArr">
       <div class="card">
-        <img src="{{ p.images[0] }}" alt="" />
+        <img [src]="[p.images[0]]" alt="" />
         <div class="card-body">
           <h5 class="card-title">{{ p.title }}</h5>
 
@@ -27,13 +27,13 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>carrello</h1>
-      <ul>
-        <li *ngFor="let blula of cart2">{{ blula.title }}</li>
-      </ul>
+<div class="container-fluid position-fixed bottom-0 text-bg-dark">
+  <div class="row" *ngIf="cart2">
+    <div class="col-1" *ngFor="let product of cart2">
+      <div class="card mb-3">
+        <img [src]="[product.images]" alt="" />
+        <p>{{ product.title }}</p>
+      </div>
     </div>
   </div>
 </div>

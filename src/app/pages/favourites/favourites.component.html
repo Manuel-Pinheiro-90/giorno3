@@ -3,7 +3,7 @@
   <div class="row row-cols-4">
     <div class="col" *ngFor="let p of favouritesDue">
       <div class="card">
-        <img src="{{ p.images[0] }}" alt="" />
+        <img [src]="[p.images[0]]" alt="" />
         <div class="card-body">
           <h5 class="card-title">{{ p.title }}</h5>
 
