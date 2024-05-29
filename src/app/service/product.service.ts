@@ -1,7 +1,8 @@
+import { Iproduct } from './../modules/iproduct';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Iproduct } from '../modules/iproduct';
+import { BehaviorSubject,Observable } from 'rxjs';
+
 import { Ijeson } from '../modules/ijeson';
 
 @Injectable({
@@ -14,6 +15,11 @@ apiUrl: string = 'https://dummyjson.com/products'
 
 favourites:Iproduct[]=[];
 cart:Iproduct[]=[];
+
+cartsub = new BehaviorSubject<Iproduct[]>([])
+cart$ = this.cartsub.asObservable()
+
+
 
   constructor(private http:HttpClient) { }
 
@@ -28,7 +34,19 @@ getById(id:number):Observable<Iproduct>{
 
 addToFavourites(product:Iproduct):void{this.favourites.push(product)}
 
-addTocart(product:Iproduct):void{this.cart.push(product)}
+addTocart(product:Iproduct):void{this.cart.push(product)
+  this.cartsub.next(this.cart)
+}
+
+
+
+remuvetocart(product:Iproduct){this.cart =this.cart.filter(p=>p.id!=product.id)
+this.cartsub.next(this.cart)
+
+}
+
+
+
 
 
 

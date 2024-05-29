@@ -33,6 +33,9 @@
       <div class="card mb-3">
         <img [src]="[product.images]" alt="" />
         <p>{{ product.title }}</p>
+        <button class="btn btn-danger" (click)="remuvetocart(product)">
+          cancella
+        </button>
       </div>
     </div>
   </div>

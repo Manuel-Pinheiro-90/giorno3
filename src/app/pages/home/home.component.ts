@@ -21,7 +21,8 @@ ngOnInit(){
   this.prodsvc.getAll().subscribe(product =>{this.jsonContent= product
     this.productArr=this.jsonContent.products;  //attesa dei dati di Iproduct dopo averli tirati fuori da Ijeson
 
-    this.cart2=this.prodsvc.cart
+    this.prodsvc.cart$.subscribe(cart=>{
+    this.cart2=cart})
 
 
 
@@ -35,16 +36,14 @@ console.log(product)
 cartClick(product:Iproduct):void{
   this.prodsvc.addTocart(product)
   console.log(product)
+}
 
+remuvetocart(product:Iproduct):void{this.prodsvc.remuvetocart(product)
+  console.log(product)
 
 
 }
 
-
-
-
 }
-
-
 
 
