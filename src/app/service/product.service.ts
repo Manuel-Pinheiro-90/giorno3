@@ -12,6 +12,8 @@ export class ProductService {
 
 apiUrl: string = 'https://dummyjson.com/products'
 
+favourites:Iproduct[]=[];
+cart:Iproduct[]=[];
 
   constructor(private http:HttpClient) { }
 
@@ -24,7 +26,9 @@ getById(id:number):Observable<Iproduct>{
   return this.http.get<Iproduct>(this.apiUrl + '/' + id);
 }
 
+addToFavourites(product:Iproduct):void{this.favourites.push(product)}
 
+addTocart(product:Iproduct):void{this.cart.push(product)}
 
 
 

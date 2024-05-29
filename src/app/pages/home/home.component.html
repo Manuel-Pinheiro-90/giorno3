@@ -15,10 +15,25 @@
           <p class="card-text">{{ p.stock }}</p>
           <p class="card-text">{{ p.tags }}</p>
           <p class="card-text">{{ p.brand }}</p>
-          <button class="btn btn-success">preferiti</button>
-          <button class="btn btn-warning">carrello</button>
+          <button class="btn btn-success" (click)="FavorOnclick(p)">
+            preferiti
+          </button>
+          <button class="btn btn-warning" (click)="cartClick(p)">
+            carrello
+          </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>carrello</h1>
+      <ul>
+        <li *ngFor="let blula of cart2">{{ blula.title }}</li>
+      </ul>
     </div>
   </div>
 </div>
